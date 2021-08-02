@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <h1>{{producto.nombre}}</h1>
+    <img [src]="producto.imagen" [alt]="producto.nombre"/>
+    <h3>Precio</h3>
+    <p>{{producto.precio}}</p>
+    <h3>Descripcion</h3>
+    <p>{{producto.descripcion}}</p>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="volver()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-button expand="block" (click)="agregar()">Agregar al carrito</ion-button>
+
+</ion-content>

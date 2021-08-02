@@ -7,6 +7,9 @@
   </ion-toolbar>
 </ion-header>
 
+
+
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -14,8 +17,9 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <p>
+    <button (click)="login()" *ngIf="showLoginButton">Log in with Google</button>
+  </p>
+  
+  <ion-button expand="block" (click)="pedir()">Realizar pedido</ion-button>
 </ion-content>

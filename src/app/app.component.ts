@@ -1,18 +1,26 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router, ActivatedRoute } from '@angular/router';
+import { Producto } from './domain/producto';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+
+  pedido: Array<Producto> = new Array<Producto>();
+
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Listado', url: '/listado', icon: 'mail' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor(private route: ActivatedRoute, private router:Router) {}
+
+  producto(p:Producto){
+    let params: NavigationExtras = {
+      queryParams:{
+        pedido:this.pedido,
+      }
+    }
+    this.router.navigate(["/listado"],params)
+  }
 }
