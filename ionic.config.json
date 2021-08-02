@@ -1,0 +1,7 @@
+{
+  "name": "pmexamenloja",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
